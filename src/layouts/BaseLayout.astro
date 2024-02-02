@@ -5,6 +5,7 @@ interface Props {
   title?: string;
 }
 const { title } = Astro.props as Props;
+import Nav from "@components/Nav";
 ---
 
 <!doctype html>
@@ -20,9 +21,9 @@ const { title } = Astro.props as Props;
   <body>
     <div>
       <div id="container">
-        <div id="content">
-          <slot />
-        </div>
+        <div class="nav"><Nav client:load /></div>
+        <div class="side-bar"></div>
+        <div class="pages"><slot /></div>
       </div>
     </div>
   </body>

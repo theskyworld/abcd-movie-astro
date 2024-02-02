@@ -1,0 +1,19 @@
+.nav {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+}
+.side-bar {
+  position: absolute;
+  z-index: 10;
+  top: 60px;
+}
+.pages {
+  position: absolute;
+  left: 170px;
+  top: 70px;
+  z-index: 10;
+  margin: {
+    top: 10px;
+  }
+}
