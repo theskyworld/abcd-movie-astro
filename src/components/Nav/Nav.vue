@@ -6,6 +6,7 @@ import Logo from "@components/Logo";
 import Search from "@components/Search";
 import Profile from "@components/Profile";
 import ProfileCard from "@components/ProfileCard";
+import WatchHistoryPart from "@components/WatchHistoryPart";
 
 const watchHistoryToggleElemRef = ref();
 const profileCardToggleElemRef = ref();
@@ -56,7 +57,7 @@ const imgURL = ref("https://imgapi.xl0408.top/index.php");
           ref="watchHistoryElemRef"
           v-if="isShowWatchHistory"
         >
-          <!-- <WatchHistoryPart /> -->
+          <WatchHistoryPart />
         </div>
       </div>
       <div class="profile-wrapper">

@@ -1,46 +1,8 @@
 ---
-import WatchHistoryPartCard from "@components/WatchHistoryPartCard";
+import Nav from "@components/Nav";
 import BaseLayout from "@layouts/BaseLayout.astro";
-
-const watchedVideos = [
-  {
-    id: 1,
-    imgURL: "https://m.ykimg.com/0541010160F63EBA04CD829CF4BB9E9C",
-    title: "神话12",
-    watchTime: new Date(),
-    watchPercent: 12,
-  },
-  {
-    id: 2,
-    imgURL: "https://m.ykimg.com/0541010160F63EBA04CD829CF4BB9E9C",
-    title: "神话12",
-    watchTime: new Date(),
-    watchPercent: 12,
-  },
-  {
-    id: 3,
-    imgURL: "https://m.ykimg.com/0541010160F63EBA04CD829CF4BB9E9C",
-    title: "神话12",
-    watchTime: new Date(),
-    watchPercent: 12,
-  },
-  {
-    id: 4,
-    imgURL: "https://m.ykimg.com/0541010160F63EBA04CD829CF4BB9E9C",
-    title: "神话12",
-    watchTime: new Date(),
-    watchPercent: 12,
-  },
-  {
-    id: 5,
-    imgURL: "https://m.ykimg.com/0541010160F63EBA04CD829CF4BB9E9C",
-    title: "神话12",
-    watchTime: new Date(),
-    watchPercent: 12,
-  },
-];
 ---
 
 <BaseLayout>
-  {watchedVideos.map((video) => <WatchHistoryPartCard {...video} />)}
+  <Nav client:load />
 </BaseLayout>
