@@ -43,7 +43,7 @@
       "eslint",
       "prettier --write"
     ],
-    "*.{html,css,md,mdx,json}": "npx prettier --write",
+    "*.{html,css,md,mdx,json,scss}": "npx prettier --write",
     "*.spec.ts": "npx vitest --environment=happy-dom --watch=false"
   },
   "commitlint": {
