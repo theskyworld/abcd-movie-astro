@@ -1,0 +1,73 @@
+.profile-card-container {
+  width: 430px;
+  height: 190px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: #25252b;
+
+  .top-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .profile-wrapper {
+      display: flex;
+      flex-direction: row;
+
+      span {
+        margin : {
+          left: 10px;
+        }
+        position: relative;
+        top: 5px;
+        font-size: 1.2em;
+        font-weight: 600;
+        color: var(--color-hover);
+      }
+    }
+
+    .log-out-wrapper {
+      button {
+        // 取消其所有默认样式
+        all: unset;
+        cursor: pointer;
+        color: #fff;
+        font-size: 500;
+        transform: translateY(3px);
+
+        &:hover {
+          color: var(--color-hover);
+        }
+      }
+    }
+  }
+  .bottom-wrapper {
+    width: calc(100% - 40px);
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    .personal-center {
+      width: max-content;
+      text-align: center;
+      cursor: pointer;
+      .iconfont {
+        font-size: 1em;
+        color: #fff;
+      }
+      p {
+        color: #fff;
+        font-size: 10px;
+        &:hover {
+          color: var(--color-hover);
+        }
+      }
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+}

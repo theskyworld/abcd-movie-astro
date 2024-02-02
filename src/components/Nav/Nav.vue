@@ -5,6 +5,7 @@ import useMainStore from "@store";
 import Logo from "@components/Logo";
 import Search from "@components/Search";
 import Profile from "@components/Profile";
+import ProfileCard from "@components/ProfileCard";
 
 const watchHistoryToggleElemRef = ref();
 const profileCardToggleElemRef = ref();
@@ -69,7 +70,7 @@ const imgURL = ref("https://imgapi.xl0408.top/index.php");
           <Profile :imgURL="imgURL" />
         </div>
         <div class="profile-card-wrapper" v-if="isShowProfileCard">
-          <!-- <ProfileCard /> -->
+          <ProfileCard />
         </div>
       </div>
     </div>
