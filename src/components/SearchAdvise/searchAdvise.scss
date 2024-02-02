@@ -1,0 +1,56 @@
+.search-advise-container {
+  width: 420px;
+  height: max-content;
+  background-color: #25252b;
+  padding : {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+  border-radius: 5px;
+
+  h5 {
+    color: #6c6c6d;
+    font-size: 0.9em;
+    margin: 0;
+  }
+
+  .content-wrapper {
+    ul {
+      padding: 0;
+      li {
+        display: inline-block;
+        font-size: 0.7em;
+        color: var(--color-main);
+        background-color: #32323c;
+        width: max-content;
+        padding: 6px;
+        border-radius: 5px;
+        margin: 10px {
+          left: 0;
+        }
+        cursor: pointer;
+
+        &.hot {
+          background-color: var(--font-hot-color);
+          .iconfont {
+            color: red;
+          }
+        }
+        &:hover {
+          opacity: 0.7;
+        }
+
+        .iconfont {
+          color: #fff;
+          width: 1.2em;
+          height: 1.2em;
+          margin : {
+            right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

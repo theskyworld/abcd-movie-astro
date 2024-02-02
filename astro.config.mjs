@@ -8,6 +8,18 @@ export default defineConfig({
     "@components": "./src/components",
     "@assets": "./src/assets",
     "@styles": "./src/styles",
+    "@layouts": "./src/layouts",
   },
   integrations: [vue()],
+  vite: {
+    server: {
+      proxy: {
+        "/api": {
+          target: "http://localhost:3000",
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, "api"),
+        },
+      },
+    },
+  },
 });

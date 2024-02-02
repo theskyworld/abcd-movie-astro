@@ -1,8 +1,8 @@
 ---
-import Profile from "@components/Profile";
+import SearchAdvise from "@components/SearchAdvise";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<Profile
-  imgURL={"https://tuapi.eees.cc/api.php?category={dongman,fengjing,biying}&type=302"}
-  client:load
-/>
+<BaseLayout>
+  <SearchAdvise client:load />
+</BaseLayout>
