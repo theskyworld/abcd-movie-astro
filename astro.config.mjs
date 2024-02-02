@@ -13,6 +13,7 @@ export default defineConfig({
     "@layouts": "./src/layouts",
     "@store": "./src/store",
     "@hooks": "./src/hooks",
+    "@server": "./src/server",
   },
   integrations: [vue({ appEntrypoint: "/src/pages/_app" })],
   vite: {
@@ -24,15 +25,7 @@ export default defineConfig({
         "@layouts": path.resolve(__dirname, "./src/layouts"),
         "@store": path.resolve(__dirname, "./src/store"),
         "@hooks": path.resolve(__dirname, "./src/hooks"),
-      },
-    },
-    server: {
-      proxy: {
-        "/api": {
-          target: "http://localhost:3000",
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, "api"),
-        },
+        "@server": path.resolve(__dirname, "./src/server"),
       },
     },
   },
