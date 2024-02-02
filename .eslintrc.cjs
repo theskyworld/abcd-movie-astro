@@ -7,6 +7,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:astro/recommended",
+    "plugin:vue/vue3-recommended",
   ],
   overrides: [
     {
@@ -18,6 +19,16 @@ module.exports = {
         sourceType: "script",
       },
     },
+    // 配置eslint解析vue文件
+    {
+      files: ["*.vue"],
+      parser: "vue-eslint-parser",
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+        extraFileExtensions: [".vue"],
+      },
+    },
+    // 配置eslint解析astro文件
     {
       // Define the configuration for `.astro` file.
       files: ["*.astro"],
