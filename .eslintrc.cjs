@@ -27,6 +27,10 @@ module.exports = {
         parser: "@typescript-eslint/parser",
         extraFileExtensions: [".vue"],
       },
+      rules: {
+        "vue/multi-word-component-names": 0,
+        "vue/html-self-closing": 0,
+      },
     },
     // 配置eslint解析astro文件
     {

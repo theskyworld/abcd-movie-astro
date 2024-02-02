@@ -1,0 +1,19 @@
+.logo-container {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 100px;
+  height: 80px;
+  cursor: pointer;
+  text-decoration: none;
+  h1 {
+    padding: 0;
+    margin: 0;
+    a{
+      img {
+      width: 100px;
+      height: 80px;
+    }
+    }
+  }
+}
