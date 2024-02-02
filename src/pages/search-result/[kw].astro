@@ -1,0 +1,12 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+/*********************************导包分界线***************************************/
+/* types */
+/* datas */
+
+const { kw } = Astro.params;
+---
+
+<BaseLayout title={kw}>
+  <p>{kw}</p>
+</BaseLayout>
