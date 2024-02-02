@@ -30,6 +30,18 @@ module.exports = {
       rules: {
         "vue/multi-word-component-names": 0,
         "vue/html-self-closing": 0,
+        "vue/max-attributes-per-line": [
+          "error",
+          {
+            singleline: {
+              max: 3,
+            },
+            multiline: {
+              max: 3,
+            },
+          },
+        ],
+        "@typescript-eslint/ban-ts-comment": 0,
       },
     },
     // 配置eslint解析astro文件

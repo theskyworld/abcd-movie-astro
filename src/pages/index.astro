@@ -1,7 +1,20 @@
 ---
+import HomePageSwiper from "@components/HomePageSwiper";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import useAxios from "@hooks/useAxios";
+
+const { get } = useAxios();
+
+const datas = await get("/home");
+const swiperDatas = datas[0];
 ---
 
 <BaseLayout>
-  <p>首页</p>
+  <div class="home-page-swiper-wrapper" slot="home-page-swiper">
+    <HomePageSwiper
+      imgList={swiperDatas.imgURLs}
+      videoTitles={swiperDatas.videoTitles}
+      client:load
+    />
+  </div>
 </BaseLayout>

@@ -22,6 +22,14 @@ import SideMenus from "@components/SideMenus";
   <body>
     <div>
       <div id="container">
+        <div class="from-home-page">
+          <div class="home-page-swiper-container">
+            <slot name="home-page-swiper" />
+          </div>
+          <div class="video-shows-container">
+            <slot name="video-shows" />
+          </div>
+        </div>
         <div class="nav"><Nav client:load /></div>
         <div class="side-menus"><SideMenus client:load /></div>
         <div class="pages"><slot /></div>
