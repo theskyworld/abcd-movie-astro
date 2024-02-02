@@ -6,6 +6,7 @@ interface Props {
 }
 const { title } = Astro.props as Props;
 import Nav from "@components/Nav";
+import SideMenus from "@components/SideMenus";
 ---
 
 <!doctype html>
@@ -22,7 +23,7 @@ import Nav from "@components/Nav";
     <div>
       <div id="container">
         <div class="nav"><Nav client:load /></div>
-        <div class="side-bar"></div>
+        <div class="side-menus"><SideMenus client:load /></div>
         <div class="pages"><slot /></div>
       </div>
     </div>
