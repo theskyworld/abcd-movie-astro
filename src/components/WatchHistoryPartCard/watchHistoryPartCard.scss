@@ -1,0 +1,48 @@
+.watch-history-card-container {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+
+  &:hover .title {
+    color: var(--color-hover);
+  }
+
+  .img-wrapper {
+    img {
+      width: 80px;
+      height: 50px;
+      border-radius: 5px;
+    }
+  }
+
+  .watch-infos-wrapper {
+    height: 50px;
+    padding : {
+      top: 3px;
+      bottom: 3px;
+    }
+    margin: {
+      left: 10px;
+    }
+    color: var(--color-main);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      font-size: 0.6em;
+    }
+
+    .watch-details {
+      font-size: 10px;
+      color: #6c6c6d;
+
+      span {
+        margin : {
+          right: 10px;
+        }
+      }
+    }
+  }
+}
