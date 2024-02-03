@@ -1,0 +1,23 @@
+@use "@styles/main.scss" as main;
+
+.page-libraries-container {
+  width: 1228px;
+  height: 530px;
+  margin {
+    bottom: 30px;
+  }
+  color: var(--color-main);
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include main.scroll;
+  .video-show-card-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    div {
+      margin-bottom: 20px;
+    }
+  }
+}
