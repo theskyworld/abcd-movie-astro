@@ -1,5 +1,6 @@
 ---
 import HomePageSwiper from "@components/HomePageSwiper";
+import VideoShowCard from "@components/VideoShowCard";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import useAxios from "@hooks/useAxios";
 
@@ -17,4 +18,9 @@ const swiperDatas = datas[0];
       client:load
     />
   </div>
+  <VideoShowCard
+    title={"黑莓"}
+    imgURL={"https://m.ykimg.com/0541010160F63EBA04CD829CF4BB9E9C"}
+    client:load
+  />
 </BaseLayout>
