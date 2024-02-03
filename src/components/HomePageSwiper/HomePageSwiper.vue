@@ -97,7 +97,11 @@ async function toPlayingPage(title: string) {
           <h2 class="video-title">
             {{ videoTitles[index] }}
           </h2>
-          <img :src="img" :alt="videoTitles[index]" />
+          <img
+            style="width: 1392px; height: 447px"
+            :src="img"
+            :alt="videoTitles[index]"
+          />
         </swiper-slide>
       </Swiper>
     </div>
