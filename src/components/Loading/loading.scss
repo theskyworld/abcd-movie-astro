@@ -1,0 +1,9 @@
+.loading-container {
+  width: min-content;
+  display: inline-block;
+
+  svg path,
+  svg rect {
+    fill: #fa17fa;
+  }
+}
