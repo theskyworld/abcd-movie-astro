@@ -1,0 +1,66 @@
+@use "@styles/main.scss" as main;
+
+.page-home-container {
+  width: 1228px;
+  // 更改高度，设置底部的margin，避免底部过于靠近视口底部
+  height: 530px;
+  margin {
+    bottom: 30px;
+  }
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include main.scroll;
+  div {
+    margin-bottom: 30px;
+  }
+
+  .rank-wrapper {
+    .title-wrapper {
+      position: relative;
+
+      h3 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.3em;
+      }
+      .ranks-select-wrapper {
+        font-size: 0.7em;
+        position: absolute;
+        right: 100px;
+        top: 3px;
+        border-radius: 5px;
+
+        span {
+          display: inline-block;
+          color: var(--color-main);
+          margin: 0 10px;
+          padding: 5px;
+          &.curRank {
+            background-color: #070708;
+            color: var(--color-hover);
+            border-radius: 5px;
+          }
+          &:hover {
+            color: var(--color-hover);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .home-wrapper,
+  .video-show-card-wrapper {
+    width: 100%;
+    margin-top: 30px;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    div {
+      margin-bottom: 20px;
+    }
+  }
+  .home-wrapper {
+    margin-top: 0px;
+  }
+}

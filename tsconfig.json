@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "moduleResolution": "node",
     "jsx": "preserve",
+    "module": "esnext",
     "paths": {
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
