@@ -4,6 +4,7 @@ import type { PageLibrariesProps } from "./types";
 import useAxios from "@hooks/useAxios";
 import VideoSelectors from "@components/VideoSelectors";
 import VideoShowCard from "@components/VideoShowCard";
+import TVSelectors from "@components/TVSelectors";
 
 const { videoSelectorsData = [], url, tv } = defineProps<PageLibrariesProps>();
 
@@ -30,12 +31,18 @@ datas.value = await get(`${url}?page=${page.value}&kws=${kws.value}`);
   <Suspense>
     <div class="page-libraries-container">
       <div class="video-selectors-wrapper">
-        <div v-if="tv">hello</div>
-        <VideoSelectors
-          v-else
-          @doChangeKws="changeKws"
-          :videoSelectors="videoSelectorsData"
-        />
+        <div v-if="tv">
+          <TVSelectors
+            @doChangeKws="changeKws"
+            :videoSelectors="videoSelectorsData"
+          />
+        </div>
+        <div v-else>
+          <VideoSelectors
+            @doChangeKws="changeKws"
+            :videoSelectors="videoSelectorsData"
+          />
+        </div>
       </div>
       <div class="video-show-card-wrapper">
         <VideoShowCard

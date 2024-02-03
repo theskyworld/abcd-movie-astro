@@ -1,0 +1,10 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import TVPage from "@components/TVPage";
+
+const title = "电视剧";
+---
+
+<BaseLayout title={title}>
+  <TVPage client:load />
+</BaseLayout>
