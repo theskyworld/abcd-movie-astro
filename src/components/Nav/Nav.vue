@@ -46,18 +46,18 @@ const imgURL = ref("https://imgapi.xl0408.top/index.php");
     </div>
     <div class="right">
       <div class="watch-history-wrapper">
-        <span ref="watchHistoryToggleElemRef">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-history_line"></use>
-          </svg>
-          <p>观看记录</p>
-        </span>
-        <div
-          class="watch-history"
-          ref="watchHistoryElemRef"
-          v-if="isShowWatchHistory"
-        >
-          <WatchHistoryPart />
+        <div ref="watchHistoryToggleElemRef">
+          <span>
+            <i class="iconfont icon-history"></i>
+            <p>观看记录</p>
+          </span>
+          <div
+            class="watch-history"
+            ref="watchHistoryElemRef"
+            v-if="isShowWatchHistory"
+          >
+            <WatchHistoryPart />
+          </div>
         </div>
       </div>
       <div class="profile-wrapper">

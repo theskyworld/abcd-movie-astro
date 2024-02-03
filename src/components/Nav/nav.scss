@@ -21,7 +21,7 @@
     flex-direction: row;
     position: relative;
     top: -21px;
-    .watch-history-wrapper {
+    .watch-history-wrapper > div {
       position: absolute;
       top: -3px;
       right: 60px;
@@ -45,9 +45,8 @@
             color: var(--color-hover);
           }
         }
-        .icon {
-          width: 1.2em;
-          height: 1.2em;
+        .iconfont {
+          font-size: 1.4em;
           margin-right: 10px;
         }
       }
