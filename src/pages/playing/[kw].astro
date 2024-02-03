@@ -1,0 +1,10 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PlayingPage from "@components/PlayingPage";
+
+const { kw } = Astro.params;
+---
+
+<BaseLayout title={kw + "-正在播放"}>
+  <PlayingPage playingKeyword={kw} client:load />
+</BaseLayout>
