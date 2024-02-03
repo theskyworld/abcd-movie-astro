@@ -1,6 +1,7 @@
 ---
 import HomePageSwiper from "@components/HomePageSwiper";
 import BingeWatch from "@components/BingeWatch";
+import HotPlaying from "@components/HotPlaying";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import useAxios from "@hooks/useAxios";
 
@@ -9,8 +10,14 @@ const { get } = useAxios();
 const datas = await get("/home");
 const swiperDatas = datas[0];
 const bingeWatchDatas = datas[1];
+const hotPlayingDatas = datas[2];
 ---
 
+<style>
+  .item {
+    margin-top: 50px;
+  }
+</style>
 <BaseLayout>
   <div class="home-page-swiper-wrapper" slot="home-page-swiper">
     <HomePageSwiper
@@ -25,6 +32,14 @@ const bingeWatchDatas = datas[1];
       imgURLs={bingeWatchDatas.imgURLs}
       videoTags={bingeWatchDatas.videoTags}
       videoScores={bingeWatchDatas.videoScores}
+      client:load
+    />
+    <HotPlaying
+      class="item"
+      videoTitles={hotPlayingDatas.videoTitles}
+      imgURLs={hotPlayingDatas.imgURLs}
+      videoTags={hotPlayingDatas.videoTags}
+      videoScores={hotPlayingDatas.videoScores}
       client:load
     />
   </div>
