@@ -1,0 +1,10 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import VarietyPage from "@components/VarietyPage";
+
+const title = "综艺";
+---
+
+<BaseLayout title={title}>
+  <VarietyPage client:load />
+</BaseLayout>
