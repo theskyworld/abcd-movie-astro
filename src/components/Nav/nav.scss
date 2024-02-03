@@ -11,8 +11,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    div {
-      margin-right: 20px;
+    .search {
+      transform: translateX(-40px);
     }
   }
 

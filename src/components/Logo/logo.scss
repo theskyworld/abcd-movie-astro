@@ -1,19 +1,11 @@
 .logo-container {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  width: 100px;
-  height: 80px;
-  cursor: pointer;
-  text-decoration: none;
+  height: 50px;
+  width: 200px;
   h1 {
-    padding: 0;
-    margin: 0;
-    a{
-      img {
-      width: 100px;
-      height: 80px;
-    }
+    img {
+      width: 80%;
+      height: 80%;
+      transform: translate(-30px, -30px);
     }
   }
 }
