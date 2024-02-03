@@ -1,0 +1,10 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import MoviePage from "@components/MoviePage";
+
+const title = "电影";
+---
+
+<BaseLayout title={title}>
+  <MoviePage client:load />
+</BaseLayout>
