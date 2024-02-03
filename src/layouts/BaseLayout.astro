@@ -39,3 +39,28 @@ import SideMenus from "@components/SideMenus";
     </div>
   </body>
 </html>
+
+<script>
+  const fromHomePageElem: HTMLDivElement =
+    document.querySelector(".from-home-page")!;
+  const navElem: HTMLDivElement = document.querySelector(".nav")!;
+  const homePageSwiperContainerElem: HTMLDivElement = document.querySelector(
+    ".home-page-swiper-container",
+  )!;
+  // 根据swiper的是否滚动至视口之外来决定是否为navbar添加背景颜色
+  const intersectionObserver = new IntersectionObserver((entries) => {
+    fromHomePageElem.onscroll = () => {
+      // 如果swiper元素被滑动到了视口之外
+      if (entries[0].intersectionRatio === 0) {
+        // 将navbar的背景颜色进行添加
+        navElem.style.backgroundColor = "#1A1C1F";
+      }
+      // 如果swiper元素被滑动重新进入了视口
+      if (entries[0].intersectionRatio > 0) {
+        // 将navbar的背景颜色去除
+        navElem.style.backgroundColor = "";
+      }
+    };
+  });
+  intersectionObserver.observe(homePageSwiperContainerElem);
+</script>
