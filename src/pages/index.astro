@@ -1,6 +1,7 @@
 ---
 import HomePageSwiper from "@components/HomePageSwiper";
 import BingeWatch from "@components/BingeWatch";
+import BingeWeekly from "@components/BingeWeekly";
 import HotPlaying from "@components/HotPlaying";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import useAxios from "@hooks/useAxios";
@@ -11,6 +12,7 @@ const datas = await get("/home");
 const swiperDatas = datas[0];
 const bingeWatchDatas = datas[1];
 const hotPlayingDatas = datas[2];
+const bingeWeeklyDatas = datas[3];
 ---
 
 <style>
@@ -27,20 +29,33 @@ const hotPlayingDatas = datas[2];
     />
   </div>
   <div class="video-shows-wrapper" slot="video-shows">
-    <BingeWatch
-      videoTitles={bingeWatchDatas.videoTitles}
-      imgURLs={bingeWatchDatas.imgURLs}
-      videoTags={bingeWatchDatas.videoTags}
-      videoScores={bingeWatchDatas.videoScores}
-      client:load
-    />
-    <HotPlaying
-      class="item"
-      videoTitles={hotPlayingDatas.videoTitles}
-      imgURLs={hotPlayingDatas.imgURLs}
-      videoTags={hotPlayingDatas.videoTags}
-      videoScores={hotPlayingDatas.videoScores}
-      client:load
-    />
+    <div>
+      <BingeWatch
+        videoTitles={bingeWatchDatas.videoTitles}
+        imgURLs={bingeWatchDatas.imgURLs}
+        videoTags={bingeWatchDatas.videoTags}
+        videoScores={bingeWatchDatas.videoScores}
+        client:load
+      />
+    </div>
+    <div class="item">
+      <HotPlaying
+        videoTitles={hotPlayingDatas.videoTitles}
+        imgURLs={hotPlayingDatas.imgURLs}
+        videoTags={hotPlayingDatas.videoTags}
+        videoScores={hotPlayingDatas.videoScores}
+        client:load
+      />
+    </div>
+    <div class="item">
+      <BingeWeekly
+        videoTitles={bingeWeeklyDatas.videoTitles}
+        imgURLs={bingeWeeklyDatas.imgURLs}
+        videoTags={bingeWeeklyDatas.videoTags}
+        videoScores={bingeWeeklyDatas.videoScores}
+        videoEpisodes={bingeWeeklyDatas.videoEpisodes}
+        client:load
+      />
+    </div>
   </div>
 </BaseLayout>
