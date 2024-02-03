@@ -3,6 +3,7 @@
   <div class="logo-container">
     <h1>
       <a href="/">
+        <p style="opacity: 0; position: absolute">ABCD影视</p>
         <img src="../../assets/imgs/logo.svg" alt="Logo" />
       </a>
     </h1>
