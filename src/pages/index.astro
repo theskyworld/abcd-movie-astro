@@ -8,6 +8,10 @@ import BestMoviesInMonth from "@components/BestMoviesInMonth";
 import NetflixHot from "@components/NetflixHot";
 import HotJanpaneseAndKorean from "@components/HotJanpaneseAndKorean";
 import HotEuropeanAndAmerican from "@components/HotEuropeanAndAmerican";
+import HotAnime from "@components/HotAnime";
+import HotHongKongAndTaiwan from "@components/HotHongKongAndTaiwan";
+import HotTVSeries from "@components/HotTVSeries";
+import HotVariety from "@components/HotVariety";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import useAxios from "@hooks/useAxios";
 
@@ -23,6 +27,10 @@ const bestMoviesInWeekDatas = datas[5];
 const netflixHotDatas = datas[6];
 const hotJanpaneseAndKoreanDatas = datas[7];
 const hotEuropeanAndAmericanDatas = datas[8];
+const hotHongKongAndTaiwanDatas = datas[9];
+const hotTVSeriesDatas = datas[10];
+const hotAnimeDatas = datas[11];
+const hotVarietyDatas = datas[12];
 ---
 
 <style>
@@ -109,6 +117,42 @@ const hotEuropeanAndAmericanDatas = datas[8];
         imgURLs={hotEuropeanAndAmericanDatas.imgURLs}
         videoEpisodes={hotEuropeanAndAmericanDatas.videoEpisodes}
         videoScores={hotEuropeanAndAmericanDatas.videoScores}
+        client:load
+      />
+    </div>
+    <div class="item">
+      <HotHongKongAndTaiwan
+        videoTitles={hotHongKongAndTaiwanDatas.videoTitles}
+        imgURLs={hotHongKongAndTaiwanDatas.imgURLs}
+        videoEpisodes={hotHongKongAndTaiwanDatas.videoEpisodes}
+        videoScores={hotHongKongAndTaiwanDatas.videoScores}
+        client:load
+      />
+    </div>
+    <div class="item">
+      <HotTVSeries
+        videoTitles={hotTVSeriesDatas.videoTitles}
+        imgURLs={hotTVSeriesDatas.imgURLs}
+        videoEpisodes={hotTVSeriesDatas.videoEpisodes}
+        videoScores={hotTVSeriesDatas.videoScores}
+        client:load
+      />
+    </div>
+    <div class="item">
+      <HotAnime
+        videoTitles={hotAnimeDatas.videoTitles}
+        imgURLs={hotAnimeDatas.imgURLs}
+        videoEpisodes={hotAnimeDatas.videoEpisodes}
+        videoScores={hotAnimeDatas.videoScores}
+        client:load
+      />
+    </div>
+    <div class="item">
+      <HotVariety
+        videoTitles={hotVarietyDatas.videoTitles}
+        imgURLs={hotVarietyDatas.imgURLs}
+        videoEpisodes={hotVarietyDatas.videoEpisodes}
+        videoScores={hotVarietyDatas.videoScores}
         client:load
       />
     </div>
