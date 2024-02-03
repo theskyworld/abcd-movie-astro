@@ -3,6 +3,8 @@ import HomePageSwiper from "@components/HomePageSwiper";
 import BingeWatch from "@components/BingeWatch";
 import BingeWeekly from "@components/BingeWeekly";
 import HotPlaying from "@components/HotPlaying";
+import BestMoviesInWeek from "@components/BestMoviesInWeek";
+import BestMoviesInMonth from "@components/BestMoviesInMonth";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import useAxios from "@hooks/useAxios";
 
@@ -13,6 +15,8 @@ const swiperDatas = datas[0];
 const bingeWatchDatas = datas[1];
 const hotPlayingDatas = datas[2];
 const bingeWeeklyDatas = datas[3];
+const bestMoviesInMonthDatas = datas[4];
+const bestMoviesInWeekDatas = datas[5];
 ---
 
 <style>
@@ -54,6 +58,24 @@ const bingeWeeklyDatas = datas[3];
         videoTags={bingeWeeklyDatas.videoTags}
         videoScores={bingeWeeklyDatas.videoScores}
         videoEpisodes={bingeWeeklyDatas.videoEpisodes}
+        client:load
+      />
+    </div>
+    <div class="item">
+      <BestMoviesInWeek
+        videoTitles={bestMoviesInWeekDatas.videoTitles}
+        imgURLs={bestMoviesInWeekDatas.imgURLs}
+        videoTags={bestMoviesInWeekDatas.videoTags}
+        videoScores={bestMoviesInWeekDatas.videoScores}
+        client:load
+      />
+    </div>
+    <div class="item">
+      <BestMoviesInMonth
+        videoTitles={bestMoviesInMonthDatas.videoTitles}
+        imgURLs={bestMoviesInMonthDatas.imgURLs}
+        videoTags={bestMoviesInMonthDatas.videoTags}
+        videoScores={bestMoviesInMonthDatas.videoScores}
         client:load
       />
     </div>
