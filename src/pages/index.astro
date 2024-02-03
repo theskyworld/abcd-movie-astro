@@ -1,6 +1,6 @@
 ---
 import HomePageSwiper from "@components/HomePageSwiper";
-import VideoShowCard from "@components/VideoShowCard";
+import BingeWatch from "@components/BingeWatch";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import useAxios from "@hooks/useAxios";
 
@@ -8,6 +8,7 @@ const { get } = useAxios();
 
 const datas = await get("/home");
 const swiperDatas = datas[0];
+const bingeWatchDatas = datas[1];
 ---
 
 <BaseLayout>
@@ -18,9 +19,13 @@ const swiperDatas = datas[0];
       client:load
     />
   </div>
-  <VideoShowCard
-    title={"黑莓"}
-    imgURL={"https://m.ykimg.com/0541010160F63EBA04CD829CF4BB9E9C"}
-    client:load
-  />
+  <div class="video-shows-wrapper" slot="video-shows">
+    <BingeWatch
+      videoTitles={bingeWatchDatas.videoTitles}
+      imgURLs={bingeWatchDatas.imgURLs}
+      videoTags={bingeWatchDatas.videoTags}
+      videoScores={bingeWatchDatas.videoScores}
+      client:load
+    />
+  </div>
 </BaseLayout>

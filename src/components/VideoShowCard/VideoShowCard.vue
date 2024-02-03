@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { VideoShowCardProps } from "./types";
+import type { VideoShowCardProps } from "./types";
 import useMainStore from "@store";
 
 const mainStore = useMainStore();
