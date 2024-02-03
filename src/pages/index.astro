@@ -5,6 +5,9 @@ import BingeWeekly from "@components/BingeWeekly";
 import HotPlaying from "@components/HotPlaying";
 import BestMoviesInWeek from "@components/BestMoviesInWeek";
 import BestMoviesInMonth from "@components/BestMoviesInMonth";
+import NetflixHot from "@components/NetflixHot";
+import HotJanpaneseAndKorean from "@components/HotJanpaneseAndKorean";
+import HotEuropeanAndAmerican from "@components/HotEuropeanAndAmerican";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import useAxios from "@hooks/useAxios";
 
@@ -17,6 +20,9 @@ const hotPlayingDatas = datas[2];
 const bingeWeeklyDatas = datas[3];
 const bestMoviesInMonthDatas = datas[4];
 const bestMoviesInWeekDatas = datas[5];
+const netflixHotDatas = datas[6];
+const hotJanpaneseAndKoreanDatas = datas[7];
+const hotEuropeanAndAmericanDatas = datas[8];
 ---
 
 <style>
@@ -76,6 +82,33 @@ const bestMoviesInWeekDatas = datas[5];
         imgURLs={bestMoviesInMonthDatas.imgURLs}
         videoTags={bestMoviesInMonthDatas.videoTags}
         videoScores={bestMoviesInMonthDatas.videoScores}
+        client:load
+      />
+    </div>
+    <div class="item">
+      <NetflixHot
+        videoTitles={netflixHotDatas.videoTitles}
+        imgURLs={netflixHotDatas.imgURLs}
+        videoEpisodes={netflixHotDatas.videoEpisodes}
+        videoScores={netflixHotDatas.videoScores}
+        client:load
+      />
+    </div>
+    <div class="item">
+      <HotJanpaneseAndKorean
+        videoTitles={hotJanpaneseAndKoreanDatas.videoTitles}
+        imgURLs={hotJanpaneseAndKoreanDatas.imgURLs}
+        videoEpisodes={hotJanpaneseAndKoreanDatas.videoEpisodes}
+        videoScores={hotJanpaneseAndKoreanDatas.videoScores}
+        client:load
+      />
+    </div>
+    <div class="item">
+      <HotEuropeanAndAmerican
+        videoTitles={hotEuropeanAndAmericanDatas.videoTitles}
+        imgURLs={hotEuropeanAndAmericanDatas.imgURLs}
+        videoEpisodes={hotEuropeanAndAmericanDatas.videoEpisodes}
+        videoScores={hotEuropeanAndAmericanDatas.videoScores}
         client:load
       />
     </div>
