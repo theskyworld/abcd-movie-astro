@@ -1,0 +1,10 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import AnimePage from "@components/AnimePage";
+
+const title = "动漫";
+---
+
+<BaseLayout title={title}>
+  <AnimePage client:load />
+</BaseLayout>
