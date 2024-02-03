@@ -1,12 +1,40 @@
 ---
+import "@styles/searchResultPage.scss";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import VideoShowCard from "@components/VideoShowCard";
+import useAxios from "@hooks/useAxios";
 /*********************************导包分界线***************************************/
 /* types */
 /* datas */
-
+const { get } = useAxios();
 const { kw } = Astro.params;
+let curPage = 1;
+const res = await get(
+  `/search?keyword=${kw}&isByClick=false&routeIndex=undefined&perPageNum=undefined&page=${curPage}&episodeIndex=undefined`,
+);
+
+const datas = res.curPageData;
 ---
 
-<BaseLayout title={kw}>
-  <p>{kw}</p>
+<BaseLayout title={kw + "-搜索"}>
+  <div class="search-res-page-container">
+    <div class="header-wrapper">
+      <p>搜索</p>
+      <p class="keyword">{kw}</p>
+      <p>,为你找到以下结果:</p>
+    </div>
+    <div class="seperate-line"></div>
+    <div class="video-show-card-wrapper">
+      {
+        datas.map((data) => (
+          <VideoShowCard
+            title={data.title}
+            imgURL={data.videoURL.pic}
+            type={data.type}
+            is-default
+          />
+        ))
+      }
+    </div>
+  </div>
 </BaseLayout>
