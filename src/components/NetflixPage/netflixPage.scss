@@ -1,0 +1,92 @@
+// TODO 将来将其抽离出去
+// 修改滚动条样式
+@mixin scroll() {
+  // 整个滚动条容器样式
+  &::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  // 滚动条轨道样式
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  // 滚动条滑块样式
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+    background-color: #555;
+  }
+}
+.netflix-page-container {
+  width: 1228px;
+  height: 615px;
+  color: var(--color-main);
+
+  .title-wrapper {
+    width: 90%;
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 1.9em;
+      font-weight: 700;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      transform: translateY(-18px);
+      height: 0;
+      border: solid 1px var(--border-color-seperate);
+    }
+    .placeholder {
+      width: 15%;
+      height: 8px;
+      margin : {
+        top: 10px;
+      }
+      border-radius: 7px;
+      background-color: var(--color-hover);
+      // 从上到下截取一半
+      clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    }
+  }
+
+  .content-wrapper {
+    height: 530px;
+    overflow-y: auto;
+    @include scroll();
+    .video-show-card-wrapper {
+      width: 100%;
+      margin-top: 0px;
+      height: max-content;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      div {
+        margin-bottom: 20px;
+      }
+
+      .video-show-card {
+        animation: flyIn 0.5s ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes flyIn {
+  from {
+    opacity: 0;
+    transform: translateY(3em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

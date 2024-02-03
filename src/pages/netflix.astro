@@ -1,0 +1,10 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import NetflixPage from "@components/NetflixPage";
+
+const title = "奈飞";
+---
+
+<BaseLayout title={title}>
+  <NetflixPage client:load />
+</BaseLayout>

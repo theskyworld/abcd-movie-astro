@@ -5,7 +5,7 @@ defineOptions({
 import { ref } from "vue";
 
 // 决定要渲染的skeleton卡片的数量
-const cardCount = ref(12);
+const cardCount = ref(1);
 </script>
 <template>
   <div class="loading-skeleton-container">
