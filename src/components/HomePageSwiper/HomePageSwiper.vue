@@ -3,9 +3,6 @@
 import { ref } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import type { HomePageSwiperProps } from "./index";
-import useMainStore from "@store";
-
-const mainStore = useMainStore();
 
 // 使用Navigation, Pagination, Autoplay模块
 import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
@@ -74,9 +71,7 @@ const curSlideindex = ref(0);
 
 // 跳转到播放页面进行播放
 async function toPlayingPage(title: string) {
-  location.assign("/playing");
-  mainStore.setPlayingKeyword(title);
-  await mainStore.getPlayingSearchResData();
+  location.assign(`/playing/${title}`);
 }
 </script>
 <template>
