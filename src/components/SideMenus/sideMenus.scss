@@ -20,17 +20,10 @@
       font-size: 0.9em;
       margin-bottom: 20px;
       cursor: pointer;
+      transition: transform 0.2s ease-in-out;
       .iconfont {
         font-size: 1.1em;
       }
-      &:hover::after {
-        position: absolute;
-        left: 135px;
-        content: "→";
-        color: var(--color-hover);
-        animation: arrowLeftToRight 0.5s ease-in-out;
-      }
-
       &:hover {
         span {
           color: var(--color-hover);
@@ -38,6 +31,7 @@
         .iconfont {
           color: var(--color-hover);
         }
+        transform: scale(1.3) translateX(9px);
       }
 
       a {
