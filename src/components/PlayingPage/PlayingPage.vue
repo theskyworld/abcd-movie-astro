@@ -6,6 +6,7 @@ import VideoLoadingAnimation from "@components/VideoLoadingAnimation";
 import PlayingAnimation from "@components/PlayingAnimation";
 import type { VideoURL, PlayingPageProps } from "./types";
 import useAxios from "@hooks/useAxios";
+import loadingGif from "@assets/imgs/loading.gif";
 
 const { get } = useAxios();
 const { playingKeyword } = defineProps<PlayingPageProps>();
@@ -127,7 +128,7 @@ const recommendDatas = await get("/playing/recommend");
                 </option>
               </select>
               <i v-show="!canClick">
-                <img src="../../assets/imgs/loading.gif" alt="" />
+                <img :src="loadingGif.src" alt="" />
               </i>
             </div>
           </div>
