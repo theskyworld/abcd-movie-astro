@@ -1,3 +1,3 @@
-import VideoLoadingAnimation from "./videoLoadingAnimation.vue";
+import VideoLoadingAnimation from "./VideoLoadingAnimation.vue";
 
 export default VideoLoadingAnimation;

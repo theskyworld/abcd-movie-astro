@@ -5,6 +5,14 @@ import VideoShowCard from "@components/VideoShowCard";
 import useAxios from "@hooks/useAxios";
 /*********************************导包分界线***************************************/
 /* types */
+
+interface Data {
+  title: string;
+  type: string;
+  videoURL: {
+    pic: string;
+  };
+}
 /* datas */
 const { get } = useAxios();
 const { kw } = Astro.params;
@@ -26,7 +34,7 @@ const datas = res.curPageData;
     <div class="seperate-line"></div>
     <div class="video-show-card-wrapper">
       {
-        datas.map((data) => (
+        datas.map((data: Data) => (
           <VideoShowCard
             title={data.title}
             imgURL={data.videoURL.pic}

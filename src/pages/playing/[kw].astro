@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import PlayingPage from "@components/PlayingPage";
 
-const { kw } = Astro.params;
+const { kw = "" } = Astro.params;
 ---
 
 <BaseLayout title={kw + "-正在播放"}>
