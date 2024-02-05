@@ -82,7 +82,7 @@ const sideMenus = ref<Array<SideMenusProps>>([
     <div class="content-wrapper">
       <ul>
         <li v-for="menu in sideMenus" :key="menu.key">
-          <a :href="menu.targetUrl">
+          <a :href="menu.targetUrl" data-astro-prefetch>
             <i class="iconfont" :class="menu.icon"></i>
             <span>{{ menu.name }}</span>
           </a>
