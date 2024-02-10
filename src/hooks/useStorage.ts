@@ -1,3 +1,9 @@
+import { createLocalStorage } from "localstorage-ponyfill";
+
+const localStorage = createLocalStorage({
+  storeFilePath: "./storage",
+});
+
 export default function useStorage() {
   return {
     setStorage: (key: string, value: string) => {

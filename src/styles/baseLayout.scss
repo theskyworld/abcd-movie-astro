@@ -19,6 +19,12 @@
       left: 180px;
       z-index: 5;
     }
+    .login-card-container {
+      position: absolute;
+      top: 50px;
+      left: 200px;
+      z-index: 20;
+    }
   }
   .nav {
     position: fixed;
