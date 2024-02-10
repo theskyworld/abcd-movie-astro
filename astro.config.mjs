@@ -6,7 +6,9 @@ import node from "@astrojs/node";
 const __dirname = path.resolve();
 // https://astro.build/config
 export default defineConfig({
-  prefetch: "hover",
+  prefetch: {
+    defaultStrategy: "hover",
+  },
   alias: {
     "@components": "./src/components",
     "@assets": "./src/assets",
