@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
+import verifyImg from "@assets/imgs/verify.jpg";
 import useAxiso from "@hooks/useAxios";
 // import Notification from "../notification/Notification.vue";
 import type { AxiosResponse } from "axios";
-// import SlideVerify from "vue3-slide-verify";
-// import type { SlideVerifyInstance } from "vue3-slide-verify";
+import SlideVerify from "vue3-slide-verify";
+import type { SlideVerifyInstance } from "vue3-slide-verify";
 import "vue3-slide-verify/dist/style.css";
 import useStorage from "@hooks/useStorage";
 import throttle from "lodash/throttle";
 import useMainStore from "@store";
+import { storeToRefs } from "pinia";
 
 const { setStorage } = useStorage();
+const { isInLogin } = storeToRefs(useMainStore());
 
 const { post } = useAxiso();
 const isLoginDisabled = ref(false);
@@ -37,8 +40,8 @@ const curActive = ref("login");
 
 const text = ref("向右滑动");
 const msg = ref("");
-const bgImgs = ref(["https://t.mwm.moe/fj"]);
-// const slideVerifyInstance = ref<SlideVerifyInstance>();
+const bgImgs = ref([verifyImg.src]);
+const slideVerifyInstance = ref<SlideVerifyInstance>();
 const accuracy = ref(3);
 const isVerifing = ref(false);
 const verifyTarget = ref("");
@@ -55,7 +58,7 @@ interface BackError {
 
 function onAgain() {
   msg.value = "再试一次";
-  // slideVerifyInstance.value?.refresh();
+  slideVerifyInstance.value?.refresh();
 }
 function onSuccess(times: number) {
   msg.value = `验证通过,耗时${(times / 1000).toFixed(1)}s,${
@@ -247,7 +250,7 @@ watch(usernameVal, () => {
 });
 </script>
 <template>
-  <div class="login-card-container">
+  <div class="login-card-container" v-if="isInLogin">
     <div class="column" :class="{ image: curActive !== 'login' }">
       <div class="guide" v-if="!isLogin">
         <h1>登录</h1>

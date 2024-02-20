@@ -12,6 +12,7 @@ import HotAnime from "@components/HotAnime";
 import HotHongKongAndTaiwan from "@components/HotHongKongAndTaiwan";
 import HotTVSeries from "@components/HotTVSeries";
 import HotVariety from "@components/HotVariety";
+import LoginCard from "@components/LoginCard";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import useAxios from "@hooks/useAxios";
 
@@ -47,7 +48,7 @@ const hotVarietyDatas = datas[12];
     />
   </div>
   <div class="login-card-wrapper" slot="login-card">
-    <!-- <LoginCard client:load /> -->
+    <LoginCard client:load />
   </div>
   <div class="video-shows-wrapper" slot="video-shows">
     <div>
