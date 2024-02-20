@@ -61,12 +61,7 @@ const imgURL = ref("https://imgapi.xl0408.top/index.php");
         </div>
       </div>
       <div class="profile-wrapper" ref="profileCardToggleElemRef">
-        <span
-          @click="useMainStore().setIsInLogin()"
-          v-if="!isLogin"
-          style="color: var(--color-hover)"
-          >登录</span
-        >
+        <span @click="useMainStore().setIsInLogin()" v-if="!isLogin">登录</span>
         <div v-else>
           <Profile :imgURL="imgURL" />
           <div class="profile-card-wrapper" v-if="isShowProfileCard">
