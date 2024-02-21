@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch, onUpdated } from "vue";
 import verifyImg from "@assets/imgs/verify.jpg";
-import useAxiso from "@hooks/useAxios";
+import useAxios from "@hooks/useAxios";
 // import Notification from "../notification/Notification.vue";
 import type { AxiosResponse } from "axios";
 import SlideVerify from "vue3-slide-verify";
@@ -11,11 +11,12 @@ import useStorage from "@hooks/useStorage";
 import throttle from "lodash/throttle";
 import useMainStore from "@store";
 import { storeToRefs } from "pinia";
+import useClickOutSide from "@hooks/useClickOutSide";
 
 const { setStorage } = useStorage();
 const { isInLogin } = storeToRefs(useMainStore());
 
-const { post } = useAxiso();
+const { post } = useAxios();
 const isLoginDisabled = ref(false);
 const isRegisterDisabled = ref(false);
 const isRegister = ref(false);
@@ -231,6 +232,14 @@ function verify(target: string) {
   }
 }
 
+const loginCardContainerElem = ref<Element>();
+
+onUpdated(() => {
+  useClickOutSide(loginCardContainerElem.value!, () => {
+    useMainStore().setIsInLogin();
+  });
+});
+
 const throttledVerify = throttle(verify, 3000, { leading: true });
 
 watch(emailLoginVal, () => {
@@ -250,7 +259,11 @@ watch(usernameVal, () => {
 });
 </script>
 <template>
-  <div class="login-card-container" v-if="isInLogin">
+  <div
+    class="login-card-container"
+    v-if="isInLogin"
+    ref="loginCardContainerElem"
+  >
     <div class="column" :class="{ image: curActive !== 'login' }">
       <div class="guide" v-if="!isLogin">
         <h1>登录</h1>

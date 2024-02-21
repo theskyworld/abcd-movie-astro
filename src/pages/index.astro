@@ -48,7 +48,8 @@ const hotVarietyDatas = datas[12];
     />
   </div>
   <div class="login-card-wrapper" slot="login-card">
-    <LoginCard client:load />
+    <!-- 由于该组件中使用了document，使用client:only使其只在客户端进行解析 -->
+    <LoginCard client:only />
   </div>
   <div class="video-shows-wrapper" slot="video-shows">
     <div>
