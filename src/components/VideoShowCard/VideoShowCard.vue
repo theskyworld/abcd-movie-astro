@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import useIntersectionObserver from "@hooks/useIntersectionObserver";
+import { computed, onMounted, ref } from "vue";
 import type { VideoShowCardProps } from "./types";
 
 const {
@@ -32,15 +33,24 @@ const rankBgColor = computed(() => {
 async function toPlayingPage(title: string) {
   location.assign(`/playing/${title}`);
 }
+
+const videoShowCardWrapperElemRef = ref<HTMLDivElement>();
+const imgElemRef = ref<HTMLImageElement>();
+onMounted(() => {
+  useIntersectionObserver(videoShowCardWrapperElemRef.value!, () => {
+    imgElemRef.value!.src = imgURL;
+  });
+});
 </script>
 <template>
   <div
+    ref="videoShowCardWrapperElemRef"
     class="video-show-card-container"
     :class="{ row: isRow, column: isColumn, default: isDefault }"
     @click="toPlayingPage(title)"
   >
     <div class="img-wrapper">
-      <img :src="imgURL" :alt="title" />
+      <img ref="imgElemRef" :alt="title" />
       <span v-if="rank" class="rank">
         <p>{{ rank }}</p>
       </span>

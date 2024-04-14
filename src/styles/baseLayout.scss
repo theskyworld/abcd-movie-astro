@@ -1,41 +1,43 @@
 @use "./main.scss" as main;
 
-.static-parts-wrapper {
-  .from-home-page {
-    width: 100vw;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    @include main.scroll();
-    .home-page-swiper-container {
-      position: relative;
-      width: 1392px;
-      height: 447px;
-      z-index: 1;
+.app-container {
+  .static-parts-wrapper {
+    .from-home-page {
+      // width: 100vw;
+      // height: 100vh;
+      overflow-y: hidden;
+      overflow-x: hidden;
+      @include main.scroll();
+      .home-page-swiper-container {
+        position: relative;
+        width: 1392px;
+        height: 447px;
+        z-index: 1;
+      }
+      .video-shows-container {
+        position: relative;
+        top: 30px;
+        left: 180px;
+        z-index: 5;
+      }
+      .login-card-container {
+        position: absolute;
+        top: 50px;
+        left: 200px;
+        z-index: 20;
+      }
     }
-    .video-shows-container {
-      position: relative;
-      top: 30px;
-      left: 180px;
-      z-index: 5;
+    .nav {
+      position: fixed;
+      z-index: 9;
+      top: 0;
     }
-    .login-card-container {
-      position: absolute;
-      top: 50px;
-      left: 200px;
-      z-index: 20;
+    .side-menus {
+      height: 96%;
+      position: fixed;
+      z-index: 10;
+      top: 60px;
     }
-  }
-  .nav {
-    position: fixed;
-    z-index: 9;
-    top: 0;
-  }
-  .side-menus {
-    height: 96%;
-    position: absolute;
-    z-index: 10;
-    top: 60px;
   }
 }
 .pages {
